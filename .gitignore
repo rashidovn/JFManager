@@ -1,1 +1,4 @@
 target/
+.idea/
+*.iml
+jfm/config.properties
