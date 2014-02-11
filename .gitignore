@@ -2,3 +2,4 @@ target/
 .idea/
 *.iml
 jfm/config.properties
+atlassian-ide-plugin.xml

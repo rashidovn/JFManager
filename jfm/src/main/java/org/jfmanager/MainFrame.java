@@ -12,13 +12,15 @@ import java.text.MessageFormat;
  * Date: 1/7/14
  * Time: 12:21 PM
  */
-public class MainFrame extends JFrame implements IJfmContainer {
+public class MainFrame extends JFrame implements IJfmComponent {
 
-    private JPanel basePanel;
+    private JPanel rootPanel;
     private JToolBar toolbar;
-    private JPanel leftPanel;
-    private JPanel rightPanel;
     private JSplitPane mainSplitPanel;
+    private JPanel rootPanelLeft;
+    private JPanel rootPanelRight;
+    private BrowserPanel browserPanelRight;
+    private BrowserPanel browserPanelLeft;
 
     public MainFrame() throws HeadlessException {
         init();
@@ -27,7 +29,16 @@ public class MainFrame extends JFrame implements IJfmContainer {
     private void init() {
         setTitle(MessageFormat.format("{0} - {1}", I18n.get("mainFrame.title"), I18n.get("mainFrame.version")));
 
-        getRootPane().setContentPane(basePanel);
+        getRootPane().setContentPane(rootPanel);
+    }
+
+    @Override
+    public void registerComponents() {
+        browserPanelLeft.setName(ComponentRegistry.BROWSER_PANEL_LEFT_NAME);
+        ComponentRegistry.getInstance().register(this, browserPanelLeft);
+
+        browserPanelRight.setName(ComponentRegistry.BROWSER_PANEL_RIGHT_NAME);
+        ComponentRegistry.getInstance().register(this, browserPanelRight);
     }
 
     public void configure(Config config) {
@@ -53,6 +64,9 @@ public class MainFrame extends JFrame implements IJfmContainer {
         setBounds(x, y, width, height);
 
         setExtendedState(config.getInt("mainFrame.windowState"));
+
+        // TODO: extract to config
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void saveConfig(Config config) {

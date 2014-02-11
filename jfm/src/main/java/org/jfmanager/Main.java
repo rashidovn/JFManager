@@ -24,16 +24,13 @@ public class Main {
 
         log.info("Starting JFManager...");
 
-        Config.getInstance().init();
         I18n.init();
+        Config.getInstance().init();
+        ComponentRegistry.getInstance().setConfig(Config.getInstance());
 
         final MainFrame mainFrame = new MainFrame();
-        mainFrame.configure(Config.getInstance());
-        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.setName(ComponentRegistry.MAIN_FRAME_NAME);
         mainFrame.addWindowListener(new ApplicationCloser());
-
-        ComponentRegistry.registerMainFrame(mainFrame);
-
         SwingUtilities.invokeLater(new ApplicationRunner(mainFrame));
     }
 

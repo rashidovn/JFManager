@@ -1,6 +1,8 @@
 package org.jfmanager;
 
 import org.jfmanager.resources.Config;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -13,11 +15,14 @@ import java.util.Map;
  */
 class ApplicationCloser extends WindowAdapter {
 
+    private static final Logger log = LoggerFactory.getLogger(ApplicationCloser.class);
+
     @Override
     public void windowClosing(WindowEvent e) {
-        for (Map.Entry<Integer, IJfmContainer> frameEntry : ComponentRegistry.getAllFrames().entrySet()) {
-            frameEntry.getValue().saveConfig(Config.getInstance());
-        }
+        log.info("Unregistering main frame");
+        ComponentRegistry.getInstance().unregisterMainFrame();
+
+        log.info("Saving configuration");
         Config.getInstance().save();
     }
 
