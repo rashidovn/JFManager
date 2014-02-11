@@ -29,6 +29,7 @@ public class ComponentRegistry implements PropertyChangeListener {
     public static final String BROWSER_PANEL_RIGHT_NAME = "browserPanelRight";
 
     public static final String FILE_SYSTEM_COMBO_BOX_NAME_SUFFIX = "fileSystemRoot";
+    public static final String LOCATION_NAME_SUFFIX = "location";
 
     private static final ComponentRegistry INSTANCE = new ComponentRegistry();
 

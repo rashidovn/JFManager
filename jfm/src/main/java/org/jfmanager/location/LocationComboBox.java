@@ -57,6 +57,10 @@ public class LocationComboBox extends JComboBox<Location> implements IJfmCompone
 
     }
 
+    public LocationComboBoxModel getLocationComboBoxModel() {
+        return (LocationComboBoxModel) dataModel;
+    }
+
     @Override
     public void doLayout() {
         try {

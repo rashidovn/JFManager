@@ -14,7 +14,7 @@ public class Location {
 
     private Path root;
 
-    private Path currentPath = Paths.get(".");
+    private Path currentPath = Paths.get(StringUtils.EMPTY);
 
     private String label = StringUtils.EMPTY;
 

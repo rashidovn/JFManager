@@ -1,16 +1,23 @@
 package org.jfmanager.location;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.text.BadLocationException;
+import javax.swing.text.GapContent;
 import javax.swing.text.PlainDocument;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.nio.file.Paths;
 
 /**
  * User: kvych
  * Date: 1/8/14
  * Time: 11:52 PM
  */
-public class LocationFieldModel extends PlainDocument implements KeyListener {
+public class LocationFieldModel extends PlainDocument {
+
+    private static final Logger log = LoggerFactory.getLogger(LocationFieldModel.class);
 
     private Location location;
 
@@ -54,6 +61,7 @@ public class LocationFieldModel extends PlainDocument implements KeyListener {
     public void setLocation(Location location) {
         this.location = location;
         try {
+            log.info("New location: " + location.getCurrentPath().toString());
             getContent().remove(0, getContent().length());
             getContent().insertString(0, this.location.getCurrentPath().toString());
             fireLocationChanged(this, location);
@@ -62,20 +70,4 @@ public class LocationFieldModel extends PlainDocument implements KeyListener {
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent event) {
-        // do nothing
-    }
-
-    @Override
-    public void keyPressed(KeyEvent event) {
-        if (event.getKeyCode() == KeyEvent.VK_ENTER) {
-            fireLocationChanged(this, location);
-        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent event) {
-        // do nothing
-    }
 }

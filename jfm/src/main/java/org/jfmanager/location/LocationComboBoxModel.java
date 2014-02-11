@@ -1,5 +1,8 @@
 package org.jfmanager.location;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import java.util.Vector;
 
@@ -9,6 +12,8 @@ import java.util.Vector;
  * Time: 12:22 PM
  */
 public class LocationComboBoxModel extends DefaultComboBoxModel<Location> {
+
+    private static final Logger log = LoggerFactory.getLogger(LocationComboBoxModel.class);
 
     public LocationComboBoxModel() {
     }
@@ -48,13 +53,18 @@ public class LocationComboBoxModel extends DefaultComboBoxModel<Location> {
     }
 
     @Override
-    public void setSelectedItem(Object anObject) {
-        Location previousFSR = (Location) getSelectedItem();
-        Location newFSR = (Location) anObject;
+    public void setSelectedItem(Object item) {
+        Location previousFSR = getSelectedItem();
+        Location newFSR = (Location) item;
         super.setSelectedItem(newFSR);
         if (newFSR != null && !newFSR.equals(previousFSR)) {
+            log.info("New root: " + newFSR.getRoot().toString());
             fireLocationChanged(this, previousFSR, newFSR);
         }
     }
 
+    @Override
+    public Location getSelectedItem() {
+        return (Location) super.getSelectedItem();
+    }
 }
