@@ -1,5 +1,8 @@
-package org.jfmanager.location;
+package org.jfmanager.location.root;
 
+import org.jfmanager.location.Location;
+import org.jfmanager.location.LocationEvent;
+import org.jfmanager.location.LocationListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

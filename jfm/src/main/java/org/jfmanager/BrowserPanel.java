@@ -1,9 +1,9 @@
 package org.jfmanager;
 
-import org.jfmanager.location.LocationComboBox;
-import org.jfmanager.location.LocationComboBoxModel;
-import org.jfmanager.location.LocationField;
-import org.jfmanager.location.LocationFieldModel;
+import org.jfmanager.location.root.LocationComboBox;
+import org.jfmanager.location.root.LocationComboBoxModel;
+import org.jfmanager.location.path.LocationField;
+import org.jfmanager.location.path.LocationFieldModel;
 import org.jfmanager.resources.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

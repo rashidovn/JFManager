@@ -1,4 +1,4 @@
-package org.jfmanager.location.platform;
+package org.jfmanager.location.util.platform;
 
 import org.apache.commons.exec.*;
 import org.apache.commons.lang3.StringUtils;

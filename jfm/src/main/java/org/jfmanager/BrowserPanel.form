@@ -14,7 +14,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="9b3fa" class="org.jfmanager.location.LocationComboBox" binding="locationComboBox">
+      <component id="9b3fa" class="org.jfmanager.location.root.LocationComboBox" binding="locationComboBox">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="70" height="-1"/>
@@ -25,7 +25,7 @@
           <enabled value="true"/>
         </properties>
       </component>
-      <component id="44323" class="org.jfmanager.location.LocationField" binding="locationField">
+      <component id="44323" class="org.jfmanager.location.path.LocationField" binding="locationField">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

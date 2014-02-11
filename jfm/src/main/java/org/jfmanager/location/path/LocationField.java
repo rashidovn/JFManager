@@ -1,6 +1,9 @@
-package org.jfmanager.location;
+package org.jfmanager.location.path;
 
 import org.jfmanager.IJfmComponent;
+import org.jfmanager.location.Location;
+import org.jfmanager.location.LocationEvent;
+import org.jfmanager.location.LocationListener;
 import org.jfmanager.resources.Config;
 
 import javax.swing.*;

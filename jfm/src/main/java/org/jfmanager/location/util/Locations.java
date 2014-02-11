@@ -1,10 +1,11 @@
-package org.jfmanager.location;
+package org.jfmanager.location.util;
 
 import org.apache.commons.exec.OS;
 import org.apache.commons.lang3.SystemUtils;
 import org.jfmanager.JfmException;
-import org.jfmanager.location.platform.UnixLocation;
-import org.jfmanager.location.platform.WindowsFileSystemRoot;
+import org.jfmanager.location.Location;
+import org.jfmanager.location.util.platform.UnixLocation;
+import org.jfmanager.location.util.platform.WindowsLocation;
 
 import java.text.MessageFormat;
 
@@ -22,7 +23,7 @@ public class Locations {
         if (OS.isFamilyUnix()) {
             return UnixLocation.getFileSystemRoots();
         } else if (OS.isFamilyWindows()) {
-            return WindowsFileSystemRoot.getFileSystemRoots();
+            return WindowsLocation.getFileSystemRoots();
         } else {
             throw new JfmException(MessageFormat.format("Unsupported OS: {0} {1} {2}", SystemUtils.OS_NAME, SystemUtils.OS_VERSION, SystemUtils.OS_ARCH));
         }
