@@ -10,7 +10,7 @@ import java.awt.*;
 public class LocationEvent extends AWTEvent {
 
     public static final int LOCATION_ROOT_CHANGED = 0;
-    public static final int LOCATION_CURRENT_CHANGED = 1;
+    public static final int LOCATION_PATH_CHANGED = 1;
 
     private Location oldLocation;
 
@@ -45,8 +45,8 @@ public class LocationEvent extends AWTEvent {
             case LOCATION_ROOT_CHANGED:
                 typeStr = "LOCATION_ROOT_CHANGED";
                 break;
-            case LOCATION_CURRENT_CHANGED:
-                typeStr = "LOCATION_CURRENT_CHANGED";
+            case LOCATION_PATH_CHANGED:
+                typeStr = "LOCATION_PATH_CHANGED";
                 break;
             default:
                 typeStr = "unknown type";

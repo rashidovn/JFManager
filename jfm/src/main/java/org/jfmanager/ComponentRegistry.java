@@ -30,6 +30,7 @@ public class ComponentRegistry implements PropertyChangeListener {
 
     public static final String FILE_SYSTEM_COMBO_BOX_NAME_SUFFIX = "fileSystemRoot";
     public static final String LOCATION_NAME_SUFFIX = "location";
+    public static final String FILE_TABLE_NAME_SUFFIX = "fileTable";
 
     private static final ComponentRegistry INSTANCE = new ComponentRegistry();
 

@@ -14,7 +14,7 @@ import javax.swing.text.PlainDocument;
  * Date: 1/8/14
  * Time: 11:52 PM
  */
-public class LocationFieldModel extends PlainDocument {
+public class LocationFieldModel extends PlainDocument implements LocationListener {
 
     private static final Logger log = LoggerFactory.getLogger(LocationFieldModel.class);
 
@@ -46,7 +46,7 @@ public class LocationFieldModel extends PlainDocument {
         for (int i = listeners.length - 2; i >= 0; i -= 2) {
             if (listeners[i] == LocationListener.class) {
                 if (e == null) {
-                    e = new LocationEvent(source, LocationEvent.LOCATION_CURRENT_CHANGED, null, newFSR);
+                    e = new LocationEvent(source, LocationEvent.LOCATION_PATH_CHANGED, null, newFSR);
                 }
                 ((LocationListener) listeners[i + 1]).locationChanged(e);
             }
@@ -60,13 +60,31 @@ public class LocationFieldModel extends PlainDocument {
     public void setLocation(Location location) {
         this.location = location;
         try {
-            log.info("New location: " + location.getCurrentPath().toString());
-            getContent().remove(0, getContent().length());
-            getContent().insertString(0, this.location.getCurrentPath().toString());
+            log.info("New location: " + location.getPath().toString());
+            int length = getLength();
+            if (length > 0) {
+                remove(0, length);
+            }
+            insertString(0, this.location.getPath().toString(), null);
             fireLocationChanged(this, location);
         } catch (BadLocationException e) {
-            // do nothing
+            log.error("Exception while changing location.", e);
         }
+    }
+
+    @Override
+    public void locationChanged(LocationEvent event) {
+        int length = getLength();
+        Location newLocation = event.getNewLocation();
+
+        try {
+            remove(0, length);
+            insertString(0, newLocation.getPath().toString(), null);
+        } catch (BadLocationException e) {
+            log.error("Exception in LocationListener.locationChanged(...).", e);
+        }
+
+        setLocation(newLocation);
     }
 
 }

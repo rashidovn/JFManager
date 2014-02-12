@@ -14,7 +14,7 @@ public class Location {
 
     private Path root;
 
-    private Path currentPath = Paths.get(StringUtils.EMPTY);
+    private Path path = Paths.get(StringUtils.EMPTY);
 
     private String label = StringUtils.EMPTY;
 
@@ -26,12 +26,12 @@ public class Location {
         this.root = root;
     }
 
-    public Path getCurrentPath() {
-        return currentPath;
+    public Path getPath() {
+        return path;
     }
 
-    public void setCurrentPath(Path currentPath) {
-        this.currentPath = currentPath;
+    public void setPath(Path path) {
+        this.path = path;
     }
 
     public String getLabel() {

@@ -2,8 +2,6 @@ package org.jfmanager.location.path;
 
 import org.jfmanager.IJfmComponent;
 import org.jfmanager.location.Location;
-import org.jfmanager.location.LocationEvent;
-import org.jfmanager.location.LocationListener;
 import org.jfmanager.resources.Config;
 
 import javax.swing.*;
@@ -18,7 +16,7 @@ import java.nio.file.Paths;
  * Date: 1/8/14
  * Time: 11:50 PM
  */
-public class LocationField extends JTextField implements KeyListener, LocationListener, IJfmComponent {
+public class LocationField extends JTextField implements KeyListener, IJfmComponent {
 
     public LocationField() {
         init();
@@ -76,7 +74,7 @@ public class LocationField extends JTextField implements KeyListener, LocationLi
             try {
                 String locationText = getLocationFieldModel().getText(0, length);
                 Location location = getLocationFieldModel().getLocation();
-                location.setCurrentPath(Paths.get(locationText));
+                location.setPath(Paths.get(locationText));
                 getLocationFieldModel().setLocation(location);
             } catch (BadLocationException e) {
                 e.printStackTrace();
@@ -87,21 +85,6 @@ public class LocationField extends JTextField implements KeyListener, LocationLi
     @Override
     public void keyReleased(KeyEvent event) {
         // do nothing
-    }
-
-    @Override
-    public void locationChanged(LocationEvent event) {
-        int length = getLocationFieldModel().getLength();
-        Location newLocation = event.getNewLocation();
-
-        try {
-            getLocationFieldModel().remove(0, length);
-            getLocationFieldModel().insertString(0, newLocation.getCurrentPath().toString(), null);
-        } catch (BadLocationException e) {
-            // do nothing
-        }
-
-        getLocationFieldModel().setLocation(newLocation);
     }
 
     public LocationFieldModel getLocationFieldModel() {
