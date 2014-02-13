@@ -1,11 +1,13 @@
-package org.jfmanager;
+package org.jfmanager.browserpanel;
 
-import org.jfmanager.filetable.FileTable;
-import org.jfmanager.filetable.FileTableModel;
-import org.jfmanager.location.root.LocationComboBox;
-import org.jfmanager.location.root.LocationComboBoxModel;
-import org.jfmanager.location.path.LocationField;
-import org.jfmanager.location.path.LocationFieldModel;
+import org.jfmanager.ComponentRegistry;
+import org.jfmanager.IJfmComponent;
+import org.jfmanager.browserpanel.filetable.FileTable;
+import org.jfmanager.browserpanel.filetable.FileTableModel;
+import org.jfmanager.browserpanel.location.root.RootComboBox;
+import org.jfmanager.browserpanel.location.root.RootComboBoxModel;
+import org.jfmanager.browserpanel.location.path.LocationField;
+import org.jfmanager.browserpanel.location.path.LocationFieldModel;
 import org.jfmanager.resources.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +24,7 @@ public class BrowserPanel extends JComponent implements IJfmComponent {
     private static final Logger log = LoggerFactory.getLogger(BrowserPanel.class);
 
     private JPanel rootPanel;
-    private LocationComboBox locationComboBox;
+    private RootComboBox locationComboBox;
     private LocationField locationField;
     private FileTable fileTable;
 
@@ -37,7 +39,7 @@ public class BrowserPanel extends JComponent implements IJfmComponent {
         fileTable.setName(getName() + ComponentRegistry.COMPONENT_NAME_DELIMITER + ComponentRegistry.FILE_TABLE_NAME_SUFFIX);
         ComponentRegistry.getInstance().register(this, fileTable);
 
-        LocationComboBoxModel locationComboBoxModel = locationComboBox.getLocationComboBoxModel();
+        RootComboBoxModel locationComboBoxModel = locationComboBox.getLocationComboBoxModel();
         LocationFieldModel locationFieldModel = locationField.getLocationFieldModel();
         FileTableModel fileTableModel = fileTable.getFileTableModel();
 

@@ -1,9 +1,9 @@
-package org.jfmanager.location.util.platform;
+package org.jfmanager.browserpanel.location.util.platform;
 
 import org.apache.commons.exec.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jfmanager.JfmException;
-import org.jfmanager.location.Location;
+import org.jfmanager.browserpanel.location.Location;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

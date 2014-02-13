@@ -1,8 +1,8 @@
-package org.jfmanager.location.root;
+package org.jfmanager.browserpanel.location.root;
 
 import org.jfmanager.IJfmComponent;
-import org.jfmanager.location.Location;
-import org.jfmanager.location.util.Locations;
+import org.jfmanager.browserpanel.location.Location;
+import org.jfmanager.browserpanel.location.util.Locations;
 import org.jfmanager.resources.Config;
 
 import javax.swing.*;
@@ -14,31 +14,31 @@ import java.util.Vector;
  * Date: 1/8/14
  * Time: 12:21 PM
  */
-public class LocationComboBox extends JComboBox<Location> implements IJfmComponent {
+public class RootComboBox extends JComboBox<Location> implements IJfmComponent {
 
     private boolean layingOut = false;
 
-    public LocationComboBox(LocationComboBoxModel aModel) {
+    public RootComboBox(RootComboBoxModel aModel) {
         super(aModel);
         init();
     }
 
-    public LocationComboBox(Location[] items) {
+    public RootComboBox(Location[] items) {
         super(items);
         init();
     }
 
-    public LocationComboBox(Vector<Location> items) {
+    public RootComboBox(Vector<Location> items) {
         super(items);
         init();
     }
 
-    public LocationComboBox() {
+    public RootComboBox() {
         init();
     }
 
     private void init() {
-        setModel(new LocationComboBoxModel());
+        setModel(new RootComboBoxModel());
     }
 
     @Override
@@ -48,7 +48,7 @@ public class LocationComboBox extends JComboBox<Location> implements IJfmCompone
 
     @Override
     public void configure(Config config) {
-        LocationComboBoxModel model = (LocationComboBoxModel) getModel();
+        RootComboBoxModel model = (RootComboBoxModel) getModel();
         for (Location location : Locations.getFileSystemRoots()) {
             model.addElement(location);
         }
@@ -59,8 +59,8 @@ public class LocationComboBox extends JComboBox<Location> implements IJfmCompone
 
     }
 
-    public LocationComboBoxModel getLocationComboBoxModel() {
-        return (LocationComboBoxModel) dataModel;
+    public RootComboBoxModel getLocationComboBoxModel() {
+        return (RootComboBoxModel) dataModel;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package org.jfmanager.filetable;
+package org.jfmanager.browserpanel.filetable;
 
 import org.jfmanager.IJfmComponent;
 import org.jfmanager.resources.Config;

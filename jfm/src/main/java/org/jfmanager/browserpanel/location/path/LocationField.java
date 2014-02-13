@@ -1,7 +1,7 @@
-package org.jfmanager.location.path;
+package org.jfmanager.browserpanel.location.path;
 
 import org.jfmanager.IJfmComponent;
-import org.jfmanager.location.Location;
+import org.jfmanager.browserpanel.location.Location;
 import org.jfmanager.resources.Config;
 
 import javax.swing.*;

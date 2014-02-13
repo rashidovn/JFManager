@@ -1,4 +1,4 @@
-package org.jfmanager.location;
+package org.jfmanager.browserpanel.location;
 
 import java.util.EventListener;
 

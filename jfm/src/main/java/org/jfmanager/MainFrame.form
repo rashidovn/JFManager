@@ -36,7 +36,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <nested-form id="5571a" form-file="org/jfmanager/BrowserPanel.form" binding="browserPanelLeft">
+              <nested-form id="5571a" form-file="org/jfmanager/browserpanel/BrowserPanel.form" binding="browserPanelLeft">
                 <constraints border-constraint="Center"/>
               </nested-form>
             </children>
@@ -48,7 +48,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <nested-form id="124d" form-file="org/jfmanager/BrowserPanel.form" binding="browserPanelRight">
+              <nested-form id="124d" form-file="org/jfmanager/browserpanel/BrowserPanel.form" binding="browserPanelRight">
                 <constraints border-constraint="Center"/>
               </nested-form>
             </children>

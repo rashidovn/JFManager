@@ -1,11 +1,11 @@
-package org.jfmanager.location.util;
+package org.jfmanager.browserpanel.location.util;
 
 import org.apache.commons.exec.OS;
 import org.apache.commons.lang3.SystemUtils;
 import org.jfmanager.JfmException;
-import org.jfmanager.location.Location;
-import org.jfmanager.location.util.platform.UnixLocation;
-import org.jfmanager.location.util.platform.WindowsLocation;
+import org.jfmanager.browserpanel.location.Location;
+import org.jfmanager.browserpanel.location.util.platform.UnixLocation;
+import org.jfmanager.browserpanel.location.util.platform.WindowsLocation;
 
 import java.text.MessageFormat;
 

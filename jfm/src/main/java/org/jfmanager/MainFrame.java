@@ -1,5 +1,6 @@
 package org.jfmanager;
 
+import org.jfmanager.browserpanel.BrowserPanel;
 import org.jfmanager.resources.Config;
 import org.jfmanager.resources.I18n;
 

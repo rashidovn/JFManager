@@ -1,4 +1,4 @@
-package org.jfmanager.filetable;
+package org.jfmanager.browserpanel.filetable;
 
 /**
  * User: kvych

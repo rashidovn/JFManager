@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.jfmanager.BrowserPanel">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.jfmanager.browserpanel.BrowserPanel">
   <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="9b3fa" class="org.jfmanager.location.root.LocationComboBox" binding="locationComboBox">
+      <component id="9b3fa" class="org.jfmanager.browserpanel.location.root.RootComboBox" binding="locationComboBox">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="70" height="-1"/>
@@ -19,7 +19,7 @@
           <enabled value="true"/>
         </properties>
       </component>
-      <component id="44323" class="org.jfmanager.location.path.LocationField" binding="locationField">
+      <component id="44323" class="org.jfmanager.browserpanel.location.path.LocationField" binding="locationField">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -32,10 +32,11 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="2ebd2" class="org.jfmanager.filetable.FileTable" binding="fileTable">
+          <component id="2ebd2" class="org.jfmanager.browserpanel.filetable.FileTable" binding="fileTable">
             <constraints/>
             <properties/>
             <clientProperties>
+              <Table.isFileList class="java.lang.Boolean" value="false"/>
               <terminateEditOnFocusLost class="java.lang.Boolean" value="true"/>
             </clientProperties>
           </component>

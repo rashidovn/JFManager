@@ -1,8 +1,8 @@
-package org.jfmanager.location.path;
+package org.jfmanager.browserpanel.location.path;
 
-import org.jfmanager.location.Location;
-import org.jfmanager.location.LocationEvent;
-import org.jfmanager.location.LocationListener;
+import org.jfmanager.browserpanel.location.Location;
+import org.jfmanager.browserpanel.location.LocationEvent;
+import org.jfmanager.browserpanel.location.LocationListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

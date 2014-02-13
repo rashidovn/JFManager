@@ -1,8 +1,8 @@
-package org.jfmanager.location.root;
+package org.jfmanager.browserpanel.location.root;
 
-import org.jfmanager.location.Location;
-import org.jfmanager.location.LocationEvent;
-import org.jfmanager.location.LocationListener;
+import org.jfmanager.browserpanel.location.Location;
+import org.jfmanager.browserpanel.location.LocationEvent;
+import org.jfmanager.browserpanel.location.LocationListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,18 +14,18 @@ import java.util.Vector;
  * Date: 1/8/14
  * Time: 12:22 PM
  */
-public class LocationComboBoxModel extends DefaultComboBoxModel<Location> {
+public class RootComboBoxModel extends DefaultComboBoxModel<Location> {
 
-    private static final Logger log = LoggerFactory.getLogger(LocationComboBoxModel.class);
+    private static final Logger log = LoggerFactory.getLogger(RootComboBoxModel.class);
 
-    public LocationComboBoxModel() {
+    public RootComboBoxModel() {
     }
 
-    public LocationComboBoxModel(Location[] items) {
+    public RootComboBoxModel(Location[] items) {
         super(items);
     }
 
-    public LocationComboBoxModel(Vector<Location> v) {
+    public RootComboBoxModel(Vector<Location> v) {
         super(v);
     }
 

@@ -1,4 +1,4 @@
-package org.jfmanager.filetable;
+package org.jfmanager.browserpanel.filetable;
 
 import org.apache.commons.lang3.StringUtils;
 

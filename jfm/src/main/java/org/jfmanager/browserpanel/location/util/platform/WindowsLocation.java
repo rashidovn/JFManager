@@ -1,7 +1,7 @@
-package org.jfmanager.location.util.platform;
+package org.jfmanager.browserpanel.location.util.platform;
 
 import org.jfmanager.JfmException;
-import org.jfmanager.location.Location;
+import org.jfmanager.browserpanel.location.Location;
 
 /**
  * User: kvych
